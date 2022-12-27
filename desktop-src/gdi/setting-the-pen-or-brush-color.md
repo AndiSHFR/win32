@@ -79,7 +79,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         //    Restoring the original object
             SelectObject(hdc,original);
-
+            
+        //     Required after a call to BeginPaint() and marks end of paint action
+            EndPaint(hwnd, &ps);
+            
         // It is not necessary to call DeleteObject to delete stock objects.
         }
         
